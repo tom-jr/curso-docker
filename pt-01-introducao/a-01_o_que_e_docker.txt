@@ -1,0 +1,50 @@
+        O que é docker?
+
+Docker se refere a muitas coisas. Isso inclui um projeto da comunidade open source. As ferramentas 
+resultantes deste projetos. A empresa Docker, proincipala apoiadora do projeto. Os fatos de que As
+tecnologias e a empresa tem o mesmo nome pode causar confusão.
+
+Simplificando:
+
+- O software de TI "Docker" é uma tecnologia de conteinerização para criação e uso de conteiners
+Linux
+
+- A comunidade Open Source do Docker trabalha gratuitamente para melhorar essa tecnologia para todos
+os usuarios 
+
+- A empresa docker se baseia no trabalho realizado pela comunidade Docker, tornando-o mais seguro
+e compartilha o avanço com a comunidade em geral. Depois, ela oferece aos clientes corporativos o su-
+porte necessario para as tecnologias que foram aprimoradas e fortalecida
+
+
+        O que é um container Linux
+
+ U container Linux é o conjunto de um ou mais processos organizado isoladamente do sistema. Todos os
+arquivos necessarios para que executa-los são fornecidos por uma imagem distinta. Na pratica os 
+containers Linux são portateis e consistentes e durante toda a migração entre ambientes de desenvol-
+vimento, teste e produção. Essas caracteristicas os tornam uma oção muito mais rapidas do que os 
+ambientes baseaddos em maaquinas virtuais tradicionais.
+
+
+        Qual a diferença entre virtualização e os containers Linux?
+
+ As duas tecnologias são distintas, porem complementares.
+- Com a virtualização é possivel executar sistemas operacionais (Windows ou Linux) simultaneamente
+em um unico sistemaa de harware.
+
+-Os containers compartilham o mesmo kernel do sistema operacional e isolam os processos de aplicações 
+do restente do sistema. Por Exemplo, os sistemas Linux executam 
+
+
+
+        Qualo a função dos conteiners no mercado atual 
+
+ Os containers tem contribuiddo imensamente para o desmembramentos de aplicações monolticas em micros-
+ serviços 
+
+ Microserviços são um tipo inovador de arquitetura de software, que consiste em construir aplicações 
+desmembrando-as em serviços independentes. Estes serviçoes se comunicam entre si usando APIs e promovem
+grande agilidade em times de desenvolvimento 
+
+ Hoje, gigantes do mercado com NetFlix e Spotify, divulgam a receita do sucesso ao transforma sua gigante
+ aplicação em mais de 500 microserviços.
