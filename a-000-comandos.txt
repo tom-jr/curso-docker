@@ -11,8 +11,18 @@
 
  Para executar uma imagem
   docker run [nome imagem]
+    docker run [nome-imagem] sleep 10 : o conteiner ira rodar durante os 10s e depois finalizar a execução
+    -||-  -it  : parametros i= iterativo  t=terminal : assim, poderar iteragir com o terminal da imagem que rodar
+      comando exit: sai do terminal do container e encerra ele
+    
 
  Verificar os containers que estão em execução
   docker ps 
     docker ps -a : mostra as atividades recentes
+
+ Parar um docker 
+  docker stop [nome-da-imagem]:  com o ps voce consegue ver o nome gerado para a maquina na coluna NAMES
+
+ Para verificar o help
+  docker run --help   
     
