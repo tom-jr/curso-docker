@@ -1,0 +1,6 @@
+    Dowwnload de imagem ISO
+
+ no hub.docker.com pesquisamos pela imagem hello world para realizarmos o dwnload da imagem.
+
+ O proprio resultado da pesquisa indica um comando para realizar o pull daquela imagem 
+ docker pull hello-world

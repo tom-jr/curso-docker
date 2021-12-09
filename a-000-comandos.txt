@@ -2,3 +2,17 @@
 
  comando para verificar o status do docker
   systemctl status docker
+
+ Quando se pesquisa por uma imagem no docker ela vem com o comando para baixa-la
+  docker pull [nome-da-imagem]
+
+ Para verificar se a lista de imagens docker.
+  docker images  
+
+ Para executar uma imagem
+  docker run [nome imagem]
+
+ Verificar os containers que estão em execução
+  docker ps 
+    docker ps -a : mostra as atividades recentes
+    
