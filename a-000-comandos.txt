@@ -1,0 +1,4 @@
+    Apos instalado o Docker
+
+ comando para verificar o status do docker
+  systemctl status docker
