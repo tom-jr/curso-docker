@@ -1,0 +1,8 @@
+    Entrando no container é possivel instalar aplicações em se bash
+ antes é necesse saio atualizar os pacotes de repositorios par ter acesso aos repositorios padrões
+ e entao assim poder executar quanquer aplicações ubuntu na imagem
+
+ com o docker container ls podemos verificar os container que estão em execução. Assim podemos pegar 
+ o id de any deles e acessar seu bash de execção com
+ docker container exec -ti id
+ cada execução tem seu id criado

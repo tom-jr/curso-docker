@@ -15,6 +15,7 @@
     docker run [nome-imagem] sleep 10 : o conteiner ira rodar durante os 10s e depois finalizar a execução
     -||-  -it  : parametros i= iterativo  t=terminal : assim, poderar iteragir com o terminal da imagem que rodar
       comando exit: sai do terminal do container e encerra ele
+    docker container run -d: rodar a imagem em backgound 
     
 
  Verificar os containers que estão em execução
@@ -33,3 +34,18 @@
 
   Comando de help para o container
     docker container --help   
+
+  Comando para help sobre execução
+    docker container run ---help
+
+  docker container ls : Lista os dockers em atividades
+
+  docker container ls -a:lista o historico das execuções dockers do sistema
+
+  docker container exec -it [id] /bin/bash: executa um terminal que esta rodando em background
+
+  docker container exec -it [id] cat /etc/*release* : entra no container executa o comando e sai
+
+  docker container stop [id]: para a execução em background da imagem 
+
+  
