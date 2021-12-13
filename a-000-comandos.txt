@@ -48,4 +48,23 @@
 
   docker container stop [id]: para a execução em background da imagem 
 
+  docker rm [id] :  exclui o docker pelo id do mesmo
+
+  docker rmi [nome-imagem]: exclui a imagem
+
+  --caso der comando de instalacao de imagem e ela não estiver disponivel localmente o docker faz o download
+    no repository da imagem em questão caso existe a mesma em seu repositorio.
+
+  docker run -dti --name [nome-atribuido] [nome-padrao]: roda um terminal docker interativo em segundo plano com um
+  um nome atribuido.
+
+  docker cp [nome-arquivo] [nome-docker]:/[diretorio]: copia o arquivo para dentro do docker.
+
+  docker exec -ti [nome-docker] /biin/bash: abre o terminal do docker
+
+  docker cp [docker-nome]:/diretorio [nome-arquivo] [nome-arquivo-copia] : copia um arquivo de dentro de um docker.
+
+  
+  
+
   
