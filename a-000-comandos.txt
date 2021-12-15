@@ -64,6 +64,8 @@
 
   docker cp [docker-nome]:/diretorio [nome-arquivo] [nome-arquivo-copia] : copia um arquivo de dentro de um docker.
 
+  docker pull [nome-imagem]: [versão]  : ira buscar o download da versão da imaem especificada.
+
   
   
 
