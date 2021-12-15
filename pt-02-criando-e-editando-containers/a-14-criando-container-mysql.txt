@@ -1,0 +1,32 @@
+Para que economise espaço fica mais viavel instalar um docker especifo para usar o mysql, assim economizando muito espaço
+    Passos
+
+-   docker pull mysql   -> download da imagem
+
+-   docker run -e MYSQL_ROOT_PASSWORD=senha123 --name mysql-a -d -p 3306:3306 mysql --> docker run[rodar a imagem], -e[settar variael de ambiente],
+--name[nomear o container]  -d[rodar em segundo plano] -p[porta dentro do container: porta que ouve fora do container]
+
+    docker exec -it mysql-a bash --> entrar no container docker do mysql
+
+    mysql -u root -p --protocol=tcp  -> comando para rodar o mysql dentro do container
+
+    create database aula --> vai criar o banco de dados aula.
+
+    show databases --> mostrara os bancos de dados criados
+
+    exit --> sair do msql 
+    
+    ip a --> para mostar o epaço de rede que o dcker criou no dispositivo com um inet padrão 172.17.0.1/16. Todo container criado recebe
+    um  ip tbm nessa faixa 
+
+    docker inspec [nome-container] para fazer um inspec que mostra varias infos do container, inclusive seu ip
+     devido a faixa de ip ser a mesma que a maquina fisica, é posivel acessar o mysql diretamente.
+
+    instalando mysql-client é possivel ter acesso ao mysql pelo PC sem entrar pelo container, devido a configuração das portas
+
+    mysql -u root -p --protocol=tcp   -> inserir a senha e acessar o banco de dados tranquilamente. 
+
+
+
+
+
