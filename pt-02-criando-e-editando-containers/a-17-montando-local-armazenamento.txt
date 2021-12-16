@@ -1,0 +1,50 @@
+
+    Quand se faz o comando    
+        docker inspect [nome-container]
+     Em Mouts>Destination esta o diretorio parao onde o mysql do container é salvo
+
+para que possamos realizar o save dos dados de forma externa:
+
+-deletamos o container atual do mysql com
+    docker rm [nome-container]
+
+-criamos na maquina fisica um caminho de para salvar com o mkdir
+
+-criamos outro container mysql com o comando
+    docker run -e   MYSQL_ROOT_PASSWORD=123 --name mysql-a -d -p 3306:3306 --volume= docker-data-teste/mysql-a:/var/lib/mysql [imagem](mysql)
+        run: rodar'
+        -e: settar variavel de ambiente do MYSQL_ROOT_PASSWORD
+        --name: settar nome do container
+        -d: executar em  segundo plano
+        -p: porta que ouve com a porta que sobe o mysql, uma ouve na fisica e outra fala 3306:3306
+        --volume: especifica a pasta para onde os dados seram exportado seguido de dois pontos apontando para a pasta do
+                  container que guarda o Mouts>Destination = /var/lib/mysql
+
+
+ Caso de um ls no diretorio da maquina local estara os dados do container myql. tudo que for criado no container mysql
+ira ser transferido tbm para essa pasta como um beckup.
+
+    Testar uma recuperação dos dados a partir de um novo container mysql
+
+ Primeiro iremos modificar o container mysql. Vamos criar um banco de dados no mesmo
+
+mysql -u root -p --protocol=tcp --port=3306
+    -u: usuario
+    -p: especifica a senha
+    --protocol: protocolo
+    --port: porta 
+
+Apos estar dentro do container criamos um banco de dados com uma tabela e iserimos um registro na tabela
+
+    create database aula;
+    use aula;
+    create table aluno(id int not null,nome varchar(129));
+    insert insert into aluno (id,nome) values (1,'Antonio Carlos');
+
+
+Entao paramos e excluimos o container 
+    docker stop [nome-container]
+    docker rm [nome-container]
+
+ Entao bassta criar o mesmo comando de criar o container mysql especificando o volume que os dados são mapeados para o novo
+container mysql.

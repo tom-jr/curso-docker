@@ -66,7 +66,9 @@
 
   docker pull [nome-imagem]: [versão]  : ira buscar o download da versão da imaem especificada.
 
-  
+  docker stop [nome-do-container]  
+
+  docker inspec [nome-container]: inpeciona o container docker 
   
 
   
