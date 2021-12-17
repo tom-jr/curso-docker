@@ -1,0 +1,76 @@
+            TIPO DE MOUNTS
+
+
+Bind, Named e dockerfile volume
+
+    Binds
+ As montagens ão basicamente vincular determinado diretorio ou arquivo do hos tdentro do container
+
+    docker run -v [hostdir]:[containerdir] mysql
+        -v volume
+
+
+    Named
+ Eles são criados em var/li/docker e podem ser referenciado apenas por seus nomes.
+
+            docker volume create [noe-volume] -->  cria um volume docker.
+
+ Digamos que criamos um volume chamada mysql-data, é possivel referencia-lo apenas com o comando 
+
+        docker run -v mysql-data:[container-dir] [imagem]
+
+
+    Dockerfile Volume
+
+ Tipos de volumes que são criados pela instrução VOLUME. Esses volumes tambem são criados em /var/lib/docker/volumes, mas não 
+ tem um determinado nome. O volume é criado ao executar o container e são uteis para salvar dados de persistencia. O desenvol-
+ vedor pode inforar onde estão os dados importantes e que deve ser persistente
+
+    
+
+
+        EXEMPLOS
+
+ 
+ docker run -dti --mount type=bind,src=[dir],dst=/data [imagem]
+        --mount--> informa que deseja criar um mount 
+        type=bind --> o tipo de mount que deseja criar
+        src = --> informa o diretorio dos PC onde sera guardado o mount 
+        dst = --> informar o destino dentr do container onde estara os arquivos criados
+        ro  --> caso no finl tenha uma ',ro' informa que os arquivos deste mount seram apenas de leitura para o container
+
+
+
+    Volumes
+
+ docker volume ls --> ira listar todos os volumes docker existentes 
+
+docker run -dti --name [name-container] --mount type=volume,src=[nome-volume],dst=[dir-no-container] [imagem-name]
+
+    run: rodar
+    -d : background
+    -t : terminal
+    -i : integravel
+    --name: nomear container
+    --mount : especifica que ira guardar os dados do container
+    type = : tipo de mout que sera usado
+    ,src = : caminho, caso for do tipo volume basta declarar o nome do volume
+    ,dst = : dir de destino dos dados do container
+    ,ro  = : infoma que aqueles dados de destino poderam apenas ser lidos.
+
+
+     docker volume rm [nome-volume]  -> para excluir volume 
+
+
+docker inspect [name-container] para inspecionar o container e poder ver o tipo de mount e os diretorios de src e destino
+
+
+ docker rm -f [nome-container] --> para forçar uam exclusão de container
+
+ docker volume prune --> remove todos os volume local que não esta em uso.
+
+ docker container prune --> realza a farçanha de deletar todos os containers
+ 
+
+  
+
