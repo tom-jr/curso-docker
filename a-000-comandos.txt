@@ -69,6 +69,25 @@
   docker stop [nome-do-container]  
 
   docker inspec [nome-container]: inpeciona o container docker 
+
+  docker status [nome-container]  : mostra o status do container declarado
+
+  docker update [nome-container] -m [n] --cpus 0.2:  settando limite de memoria e porcentagem do uso de cpus
+
+  docker container logs [nome-conteiner]  ; reotrna todos os logos do container declarado
+
+  docker container top:  mostra os processos que estão em execução no momento no container declarado
+
+  docker network ls:  lista os networks do docker. Todo network por paadrao é criado eem bridge que tem acesso ao host 
+
+  docker network create [nome-rede]: cria uma rede e ja determina uma faixa de subrede. Quando for criar um novo container pode especificar a
+a rede e assim manter a cominicação entre elas isolada por meio desse network criado  
+
+  docker run -dti --name [nome-container] --network [nome-rede]  [image]: --network informa o nome da rede do novo container
+
+  docker network inspec [nome-rede] : abri um inspec da rede onde se pode consultar o ip da rede para realizar as comunicações
+
+  
   
 
   

@@ -1,0 +1,6 @@
+
+Para baixar a imagem do Apache php utilizamos o comando 
+
+    docker pull php:7.4-apache 
+
+
