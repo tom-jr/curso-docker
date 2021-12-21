@@ -1,0 +1,70 @@
+docker pull [nome-imagem]: realiza o download da imagem que selecionou. Normalmente o vem com o comando no docker hub.
+
+docker images:  apresenta no console todas as imagens baixadas.
+
+docker run [nome-imagem] : roda a imagem informada. Esse comando executa a imagem(container) e logo aṕs sai da execução do mesmo
+
+docker container ls: lista todos os containers(imagens) que estão em execução. Porem que foi executado apenas com o run não estara nessa lista.
+
+docker container ls -a : apresenta a lista no console de todos containers executados recentemente pelo docker.
+
+docker run [container] sleep [n-times] : o container declarado ira executar e deixar o console indisponvel dourante o tempo informado no sleep.
+
+docker container stop [container-nome] : para o container que estiver rodando com o nome especificado, pode ser informado o nome ou o id do container para usar como 
+chave da execução. no comando docker container ls é possivel visualizar os id e nomes dos containers, caso o nome não for settado pelo user, o sistema setta um generico
+por conta propria.    
+
+docker run -ti [container]  : informa que deseja da run no container com parametros de -t e -i  -> -t: terminal  -i: interativo. De cara ira entrar dentro do container
+rodando, uma maquina virtual. Caso for uma maquinaa ubunto voce pode executar o comando apt update e assim utilizar do repositorio padrão para instalar aplicações em
+seu container.
+
+exit: sai do container e para sua execução .
+
+docker -dti [container]: executa o container em background devido ao paaramentro -d: representa que ele ficara executando em background, então assim poderar ter seu
+bash acessado apos criado. Quando container é formado pelo comando -dti, voce pode executar o bash do mesmo a vontade com o comando docker exec -ti [container-name] 
+enquanto o container estiver executando em background. Caso contrario não é possivel mais executar o mesmo.
+
+docker -ti [container-name] [comando]: ira executar o comando dentro do container declarado(precisa esta rodando em -d) e depois da execução saira do container.
+
+docker rm [nome-container]||[id-container]: excluir o container por completo, lembrando que o mesmo não pode esta em execução.
+
+docker rmi [image-name]: excluira da maquina a imaagem com nome declarado.
+
+
+docker run -dti --name [name-container] [name-image-container]: nomea o container na sua criação. o --name é para informa que sera passado o nome que sera atribuido
+ao container criado.
+
+docker run -dti --name [nome-para-container] [imagem] : cria um container para rodar com terminal interativo em background e nomea o mesmo com --name
+
+docker exec [nome-container] [comando]: executa comandos informados dentro do container que esta rodando em background
+
+docker cp [nome-arquivo] [nome-container]:[dir-no-container]: copia arquivos para dentro do container declarado 
+
+docker cp [nome-container]:[dir]  [dir-PC] 
+
+docker pull [imagem]:[tag] : as tags tem disponivel na pagina de cada imagem no docker hub, assim podendo diferenciar as versões das imagems disponiveis
+
+==MYSQL==
+É obrigatorio informar a variavel de ambiente MYSQL_ROOT_PASSWORD para utilizar o MYSQL
+
+    docker pull mysql : download da imagem do mysql
+
+    docker run -e MYSQL_ROOT_PASSWORD=admin --name mysql-a -d -p 3306:3306 mysql: o -e informa que sera passado a variavel de ambiente -d rodar em background, -p 
+    informa as portas que seram output e input de listern.
+    
+    docker exec -it mysql-a bash: comano para executar o baash do container mysql criado.
+    
+    mysql -u root -p --protocol=tcp:  comando interno do docker do mysql para logar no console do banco
+
+    quando docker é criado ele ganha ma faixa de ip. Todos os dockers criados sem informar uma rede vão para a faixa de ip padrao da rede docker. 
+    Caso installar no PC_Local o mysql-client é possivel acessar o banco criado no docker por meio da rede.
+
+    docker container stop [nome-container]: para o container declarado. Assim impossibilita qualquer acesso ao mesmo
+
+    docker container start [nome-container]: inicia o container que estava em status parado. O mesmo podia ser visualizado com docker container ls -a 
+
+    
+==MYSQL==
+
+
+
