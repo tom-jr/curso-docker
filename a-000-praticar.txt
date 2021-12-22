@@ -20,13 +20,13 @@ seu container.
 
 exit: sai do container e para sua execução .
 
-docker -dti [container]: executa o container em background devido ao paaramentro -d: representa que ele ficara executando em background, então assim poderar ter seu
+docker run -dti [container]: executa o container em background devido ao paaramentro -d: representa que ele ficara executando em background, então assim poderar ter seu
 bash acessado apos criado. Quando container é formado pelo comando -dti, voce pode executar o bash do mesmo a vontade com o comando docker exec -ti [container-name] 
 enquanto o container estiver executando em background. Caso contrario não é possivel mais executar o mesmo.
 
-docker -ti [container-name] [comando]: ira executar o comando dentro do container declarado(precisa esta rodando em -d) e depois da execução saira do container.
+docker exec -ti [container-name] [comando]: ira executar o comando dentro do container declarado(precisa esta rodando em -d) e depois da execução saira do container.
 
-docker rm [nome-container]||[id-container]: excluir o container por completo, lembrando que o mesmo não pode esta em execução.
+docker rm [nome-container] || [id-container]: excluir o container por completo, lembrando que o mesmo não pode esta em execução.
 
 docker rmi [image-name]: excluira da maquina a imaagem com nome declarado.
 
@@ -58,13 +58,24 @@ docker pull [imagem]:[tag] : as tags tem disponivel na pagina de cada imagem no 
 
     quando docker é criado ele ganha ma faixa de ip. Todos os dockers criados sem informar uma rede vão para a faixa de ip padrao da rede docker. 
     Caso installar no PC_Local o mysql-client é possivel acessar o banco criado no docker por meio da rede.
+   
+    ==MYSQL==
 
     docker container stop [nome-container]: para o container declarado. Assim impossibilita qualquer acesso ao mesmo
 
     docker container start [nome-container]: inicia o container que estava em status parado. O mesmo podia ser visualizado com docker container ls -a 
 
-    
-==MYSQL==
+    docker inspec [nome-container]: exibe varias informações sobre o container declarado. Em mounts tem o attributo destination, onde mostra o diretorio dentro do
+    container one os dados estao sendo armazenados
+
+    criando um diretorio, o mesmo pode ser usado na criacao de um container o referenciando como destino de dados do conteudo do container
+
+    docker container run -e MYSQL_ROOT_PASSWORD=admin --name mysql-a -d -p 3306:3306 --volume[dir-criado-no-local]:[dir-padrao-container] mysql
+
+
+    docker run -dti -v type=bind,src=[dir],dst=[dir] ubuntu  :  -v especifica que se trata de volume, type=bind: tipo de volume é bind
+
+
 
 
 
